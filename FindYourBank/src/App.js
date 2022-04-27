@@ -1,8 +1,9 @@
+import RoutesComponent from "./RoutesComponent";
 
 function App() {
   return (
     <div>
-<h1>hiiiiiiiiiiiiiiiii</h1>
+      <RoutesComponent />
     </div>
   );
 }

@@ -10,7 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import logo from "../../assets/Groww_app_logo.png";
 import { useNavigate } from "react-router-dom";
 
-const drawerWidth = 240;
+const drawerWidth = "9rem";
 
 const Navbar = ({ children }) => {
   let navigate = useNavigate();
@@ -19,10 +19,9 @@ const Navbar = ({ children }) => {
       <CssBaseline />
       <AppBar position="fixed" sx={{
         zIndex: (theme) => theme.zIndex.drawer + 1,
-        backgroundColor: "white"
+        backgroundColor: "#00D09C"
       }}>
         <Toolbar>
-          // Todo: style groww logo if you have time
           {/* <div sx={{height: "4rem",}}>
           <img src={logo} alt="logo"/>
           </div> */}
@@ -50,7 +49,6 @@ const Navbar = ({ children }) => {
           </List>
         </Box>
       </Drawer>
-      <main >{children}</main>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
         {children}

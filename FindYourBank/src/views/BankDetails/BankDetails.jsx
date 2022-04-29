@@ -7,7 +7,7 @@ const BankDetails = (props) => {
     const myContext = useContext(AppContext);
     return (
         <div>
-            <h3>BankDetails</h3>
+            <h4>BankDetails</h4>
             <div>
                 <div className="form-div">
                     <div className="inner-div">

@@ -22,6 +22,7 @@ const Navbar = ({ children }) => {
         backgroundColor: "#00D09C"
       }}>
         <Toolbar>
+          <h3>Find Your Bank</h3>
           {/* <div sx={{height: "4rem",}}>
           <img src={logo} alt="logo"/>
           </div> */}

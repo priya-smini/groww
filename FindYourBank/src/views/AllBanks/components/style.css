@@ -1,0 +1,10 @@
+.tableCaption {
+    height: 50vh;
+    background: white;
+  }
+  .emptyTableDiv {
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    text-align: center;
+  }

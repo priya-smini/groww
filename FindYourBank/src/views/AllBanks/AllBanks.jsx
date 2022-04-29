@@ -11,8 +11,8 @@ import AppContext from '../../components/AppContext';
 const AllBanks = () => {
     const [city, setCity] = useState("MUMBAI")
     const [category, setCategory] = useState("bank_name")
-    const [cacheData, setCacheData] = useState([])
-    const [tableData, setTableData] = useState([])
+    const [cacheData, setCacheData] = useState(undefined)
+    const [tableData, setTableData] = useState(undefined)
     const [loader, setLoader] = useState(false)
     const [searchText, setSearchText] = useState('')
 
@@ -36,11 +36,17 @@ const AllBanks = () => {
     }
     const fetchTableData = ({ city = "MUMBAI" }) => {
         setLoader(true)
-        axios.get(`https://vast-shore-74260.herokuapp.com/banks?city=${city}`).then((response) => {
-            setTableData(response?.data)
-            setCacheData(response?.data)
-            setLoader(false)
-        })
+        setTableData(undefined)
+        setCacheData(undefined)
+        axios.get(`https://vast-shore-74260.herokuapp.com/banks?city=${city}`)
+            .then((response) => {
+                setTableData(response?.data)
+                setCacheData(response?.data)
+                setLoader(false)
+            }).catch((err) => {
+                setLoader(false)
+                setTableData([])
+            })
     }
 
     useEffect(() => {
@@ -54,7 +60,7 @@ const AllBanks = () => {
         <div>
             {/* Top section */}
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <h3>All Banks</h3>
+                <h4>All Banks</h4>
                 <div style={{ display: "flex", alignItems: "center" }}>
                     {/* Select city dropdown */}
                     <FormControl sx={{ m: 1, minWidth: "7.5rem" }} size="small">

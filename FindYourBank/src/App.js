@@ -4,13 +4,13 @@ import AppContext from "./components/AppContext";
 
 function App() {
   const [detailsPageData, setDetailsPageData] = useState(undefined);
-  const [setting2value, setSetting2value] = useState(false);
+  const [favoritesData, setFavoritesData] = useState([]);
 
   const store = {
     detailsPageData: detailsPageData,
-    setting2name: setting2value,
+    favoritesData: favoritesData,
     setDetailsPageData,
-    // toggleSetting2,
+    setFavoritesData
   };
 
   return (
